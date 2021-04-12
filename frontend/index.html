@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <title>Hamming Encoder</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="hamming-encoder">
+      <h1>
+        Hamming code for
+        <input v-on:change="initDataBits()" v-model="numberOfDataBits"/>
+          bits
+      
+
+        <!--<v-on:change="initDataBits()" v-model="numberOfDataBits">-->
+        <!--<form action="" method="">
+          <label>Nr: -</label>
+          <input type="text" placeholder="Introduceti numar:" id=value/>
+          <button class = "send-button" id="send">Send</button>
+          <div value = document.getElementById("numar").value;></div>-->
+         <!-- <script src="E:\facultate_sem2\td\lab\lab3\lab3\frontend\js\app.js" type="text/javascript"></script>
+      </form>--> 
+    
+      <!--<script type="text/javascript">
+     //     function getValue(){
+       //       var numar = document.getElementById("numar").value;
+        //  }
+      //</script>-->
+        bits
+      </h1>
+      <br />
+      <ul v-for="(bit,index) in dataBits">
+        <li>
+          <input
+            maxlength="1"
+            :placeholder="'D'+index"
+            v-model="bit.data"
+            v-bind:class="[validateBit(bit.data) ? 'valid-input' : 'invalid-input']"
+          />
+        </li>
+      </ul>
+      <br />
+      Data bits: <code>{{dataBits}}</code> <br />
+      <button v-on:click="send()">Send</button>
+      <p>{{ status }}</p>
+    </div>
+    <script type="text/javascript" src="libs/vue.js"></script>
+    <script type="text/javascript" src="libs/axios.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
